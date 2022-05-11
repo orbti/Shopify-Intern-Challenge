@@ -16,10 +16,19 @@ we naively calculate an AOV of $3145.13. Given that we know these shops are sell
 a relatively affordable item, something seems wrong with our analysis. 
 
 
-1. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data. 
+1. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
+
+The first thing I think about is that there are some orders that are very large. This will pull the mean towards these orders.
+I looked at the dataset and found there were some orders that were $70,400.00. Most of the data lays between $163.00 and $390.00 
+One way to evaluate this data would be to use the median instead of the mean.
+ 
 2. What metric would you report for this dataset?
+
+I would use the meadian for this dataset to best describe the amount per order.
+
 3. What is its value?
 
+The median for order amounts is $284.00.
 
 
 
@@ -28,6 +37,7 @@ Please use queries to answer the following questions. Paste your queries along w
 
 
 1. How many orders were shipped by Speedy Express in total?
+
 SELECT ShipperName, count(OrderID) num_shipments FROM Orders
 join Shippers on orders.ShipperID = Shippers.ShipperID
 where ShipperName = 'Speedy Express'
@@ -36,6 +46,7 @@ group by ShipperName
 Speedy Express made 54 shipments in total.
 
 2. What is the last name of the employee with the most orders?
+
 SELECT LastName, count(OrderID) num_orders  FROM Employees
 join Orders on Employees.EmployeeID = Orders.EmployeeID
 group by LastName
@@ -45,6 +56,7 @@ limit 1
 The last name of the employee with the most orders is Peacock with 40 orders.
 
 3. What product was ordered the most by customers in Germany?
+
 SELECT ProductName, sum(Quantity) total_ordered FROM Customers
 join Orders on Customers.CustomerID = Orders.CustomerID
 join OrderDetails on Orders.OrderID = OrderDetails.OrderID
