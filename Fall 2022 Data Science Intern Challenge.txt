@@ -19,7 +19,7 @@ a relatively affordable item, something seems wrong with our analysis.
 1. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
 
 The first thing I think about is that there are some orders that are very large. This will pull the mean towards these orders.
-I looked at the dataset and found there were some orders that were $70,400.00. Most of the data lays between $163.00 and $390.00 
+I looked at the dataset and found there were some orders that were $704,000.00. Most of the data lays between $163.00 and $390.00 
 One way to evaluate this data would be to use the median instead of the mean. In my jupityer notebook I graphed a histogam. 
 The data is heavly skewed to the right. I used a logrithmic scale to better represent the data on the histogram. 
 I also ploted a vertical line representing the mean and a vertical line representing the median. You can see that the large 
