@@ -1,7 +1,7 @@
 ﻿Fall 2022 Data Science Intern Challenge 
 
 
-Please complete the following questions, and provide your thought process/work. You can attach your work in a text file, 
+Please complete the following questions and provide your thought process/work. You can attach your work in a text file, 
 link, etc. on the application page. Please ensure answers are easily visible for reviewers!
 
 
@@ -19,17 +19,24 @@ a relatively affordable item, something seems wrong with our analysis.
 1. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
 
 The first thing I think about is that there are some orders that are very large. This will pull the mean towards these orders.
-I looked at the dataset and found there were some orders that were $704,000.00. Most of the data lays between $163.00 and $390.00 
-One way to evaluate this data would be to use the median instead of the mean. In my jupityer notebook I graphed a histogam. 
-The data is heavly skewed to the right. I used a logrithmic scale to better represent the data on the histogram. 
-I also ploted a vertical line representing the mean and a vertical line representing the median. You can see that the large 
+I looked at the dataset and found there were some orders that were $70,400.00. Most of the data lays between $163.00 and $390.00 
+One way to evaluate this data would be to use the median instead of the mean. In my Jupyter notebook I graphed a histogram. 
+The data is heavily skewed to the right. I used a logarithmic scale to better represent the data on the histogram. 
+I also plotted a vertical line representing the mean and a vertical line representing the median. You can see that the large 
 values are pulling the mean to the right. I then cut out the outliers by removing all values that are larger than the 0.98 quantile. 
-I plotted the median and mean of this new dataset as vertical lines. This will allow the mean to be a better respresentation of the data. 
+I plotted the median and mean of this new dataset as vertical lines. This will allow the mean to be a better representation of the data. 
 I would still use the median as a value to represent the data.
+
+I also wanted to look at what shops are having such large order amounts and look at their avg_order_size. I created a dataframe to aggregate
+their order_amount and number of orders by shop. I took order_amount by shop and divided by num_orders from that shop to get avg_order_amount per store. There are two
+shop with a very large avg_order_amount compared to the other shops. These two shops are having the same number of orders on average
+but their order sizes are significantly larger than the other shops.
  
 2. What metric would you report for this dataset?
 
-I would use the meadian for this dataset to best describe the amount per order.
+I would use the median for this dataset to best describe the amount per order. I would also add that there were two outliers, shop 42 and 72.
+These two shops had on average the same number of orders but those order amounts on average were significantly larger than the majority of the
+the other shops. More data would be needed to see exactly why these two shops had orders that were so much larger than the other shops.
 
 3. What is its value?
 
