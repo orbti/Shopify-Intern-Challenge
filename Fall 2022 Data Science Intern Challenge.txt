@@ -27,20 +27,22 @@ values are pulling the mean to the right. I then cut out the outliers by removin
 I plotted the median and mean of this new dataset as vertical lines. This will allow the mean to be a better representation of the data. 
 I would still use the median as a value to represent the data.
 
-I also wanted to look at what shops are having such large order amounts and look at their avg_order_size. I created a dataframe to aggregate
-their order_amount and number of orders by shop. I took order_amount by shop and divided by num_orders from that shop to get avg_order_amount per store. There are two
-shop with a very large avg_order_amount compared to the other shops. These two shops are having the same number of orders on average
-but their order sizes are significantly larger than the other shops.
+I also wanted to look at what shops are having such large order amounts and look at their avg_order_size and amount per item. 
+I created a dataframe to aggregate order_amount, number of orders and items per order by shop. I added three new columns to show 
+amount per order, amount per item and items per order. Shop_id 78 and 42 stick out. Shop_id 42 has a very large amount per order 
+compared to the rest of the shops but the amount per item and items per order is not far off from the median. Shop_id 78 on the 
+otherhand has a very large amount per order size and amount per item, $49,213.04 and $25,725.00 respectively.
  
 2. What metric would you report for this dataset?
 
 I would use the median for this dataset to best describe the amount per order. I would also add that there were two outliers, shop 42 and 72.
 These two shops had on average the same number of orders but those order amounts on average were significantly larger than the majority of the
-the other shops. More data would be needed to see exactly why these two shops had orders that were so much larger than the other shops.
+the other shops. Shop 42 amount per item was close to the rest of the shops. Shop 72 amount per item was significantly larger than the rest of
+shops at $25,725.00.
 
 3. What is its value?
 
-The median for order amounts is $284.00.
+The median for all order amounts is $284.00.
 
 
 
